@@ -1,0 +1,20 @@
+﻿@model BankData.ViewModel.HomeViewModel
+
+<h2>@Model.Title</h2>
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>Country</th>
+        <th>GDP($)</th>
+    </tr>
+    @foreach (var items in Model.Values)
+
+    {
+        <tr>
+            <td>@items.country.value</td>
+            <td>@string.Format("{0:C}", @items.value).Replace("£", string.Empty)</td>
+        </tr>
+    }
+
+    </table>
+
+    
